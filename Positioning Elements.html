@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            padding-top: 50px; /* Adjust padding to accommodate fixed header */
+        }
+        .fixed {
+            position: fixed;
+            top: 70px; /* Adjust top position to make space for fixed header */
+            right: 20px;
+            background-color: #ff0000;
+            padding: 10px;
+            color: #fff;
+        }
+        .absolute {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #00ff00;
+            padding: 15px;
+            color: #fff;
+        }
+        .sticky {
+            position: sticky;
+            top: 20px;
+            background-color: #0000ff;
+            padding: 10px;
+            color: #fff;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="header">Fixed Header</div>
+
+<div class="container">
+    <div class="fixed">Fixed Element</div>
+    <div class="absolute">Absolute Element</div>
+    <div class="sticky">Sticky Element</div>
+    <!-- Adding Gifs -->
+    <img src="gifs/ac389b7e32efc43aa3e8bd463be8f839.gif" alt="Heihachi smiling" style="position: absolute; top: 100px; left: 20px;">
+    <!-- <img src="images/big-hei.jpg" style="position: relative; top: 50px; left: 1300px;"> -->
+</div>
+
+</body>
+</html>
