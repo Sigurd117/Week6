@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid System</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for the grid */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Column styles */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+
+        .column {
+            float: left;
+            flex: 1 0 calc(25% - 20px);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Clearfix to clear floats */
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive */
+        @media screen and (min-width: 768px) {
+            .column {
+                flex: 1 0 calc(50% - 20px);
+            }
+        }
+
+        @media screen and (min-width: 480px) {
+            .column {
+                width: 33.333%; /* Three columns on extra-large screens */
+            }
+        }
+
+        /* Sample content styles */
+        .content {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <div class="content">
+                <h2>Ultimate Marvel Vs Capcom 3</h2>
+                <iframe width="auto" height="315" src="https://www.youtube.com/embed/pDU8fYth808?si=JGx_76eQt6JzN8mA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <p>Marvel Vs Capcom 3 best of Zero.</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <h2>Capcom VS SNK 2 - All Special Intros </h2>
+                <iframe width="auto" height="315" src="https://www.youtube.com/embed/V5s_fBWFzsg?si=6P633rkfk6ubySyu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <p>Character Interactions</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <h2>BEST OF Street Fighter X Tekken</h2>
+                <iframe width="auto" height="315" src="https://www.youtube.com/embed/OE6PC2sr5f4?si=rscNySiFYbtGJ7U8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <p>Best of Street Fighter X Tekken.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
