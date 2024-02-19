@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Sidebar</title>
+    <style>
+        body {
+            font-family: "Century Gothic", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: #f4f4f4;
+            position: sticky;
+            top: 0;
+            overflow-y: auto;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .main-content {
+            height: auto; /* Just for demonstration, replace with actual content */
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: page;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                position: static;
+                width: 100%;
+            }
+        }
+
+        img {
+            height: auto;
+            width: 500px;
+        }
+
+        .CVS2 {
+            height: auto;
+            width: 800px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var sidebarLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+            sidebarLinks.forEach(function(link) {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    var targetId = this.getAttribute("href").substring(1);
+                    var targetElement = document.getElementById(targetId);
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="header">
+    <h1>Sticky Sidebar Example</h1>
+</div>
+<div class="container">
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="main-content">
+            <h2 id="section1">Section 1</h2>
+            <p>Street Fighter VS Tekken Cover art</p>
+            <img src="images/sfxtekken-artbook-cover.jpg">
+
+            <h2 id="section2">Section 2</h2>
+            <p>Ultimate Marvel VS Capcom 3 cover art</p>
+            <img src="images/mvc3-ultimate-poster-art-by-shinkiro-highres.jpg">
+
+            <h2 id="section3">Section 3</h2>
+            <p>Capcom vs SNK 2 Ad</p>
+            <img class="CVS2" src="images/cvs2-dreamcast-vs-ps2.jpg">
+            <!-- Add more content here -->
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>Footer - Sticky</p>
+</div>
+</body>
+</html>
